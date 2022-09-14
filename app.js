@@ -31,6 +31,7 @@ document.body.innerHTML = player
 
 //Forma 3
 
+/*
 const displayRanking = () => {
     //crear un elemento div
     let container = document.createElement("DIV");
@@ -46,5 +47,21 @@ const displayRanking = () => {
     //return document.body
     return document.body;
 }
+*/
 
+const displayRanking = () =>{
+    let container = document.createElement("DIV");
+    container.className = "container";
+    for(let i=0;i<10;i++){
+        container.innerHTML += `
+        <div><h3>
+        ${tennisRankings[i].rank}
+        ${tennisRankings[i].name}
+        ${tennisRankings[i].country_name}
+        ${tennisRankings[i].bestRank}
+        </h3></div>`
+    }
+    document.body.appendChild(container);
+    return document.body;
+}
 displayRanking()
